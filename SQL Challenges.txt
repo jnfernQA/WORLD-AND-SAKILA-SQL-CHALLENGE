@@ -1,0 +1,77 @@
+SQL Challenges
+
+World.sql
+
+1.Using COUNT, get the number of cities in the USA
+
+A. SELECT COUNT(CountryCode) 
+    -> FROM city
+    -> WHERE CountryCode = 'USA';
+
+Output = 274
+
+--------------------------------------------------------------------------------------
+
+2.Find out the population and life expectancy for people in Argentina.
+
+A. SELECT Name, Population, LifeExpectancy
+    -> FROM country
+    -> WHERE Name = 'Argentina';
+
+Output =  Name      | Population | LifeExpectancy |
+	+-----------+------------+----------------+
+	| Argentina |   37032000 |           75.1 |
+
+---------------------------------------------------------------------------------------
+
+3. Using IS NOT NULL, ORDER BY, and LIMIT, which country has the highest life expectancy?
+
+A. SELECT Name, LifeExpectancy
+    -> FROM country
+    -> ORDER by LifeExpectancy DESC LIMIT 1;
+
+Output = ---------+----------------+
+	| Name    | LifeExpectancy |
+	+---------+----------------+
+	| Andorra |           83.5 |
+	+---------+----------------+
+
+-----------------------------------------------------------------------------------------
+
+4. Using JOIN ... ON, find the capital city of Spain.
+
+A. SELECT city.name
+    -> FROM country 
+    -> join city ON country.capital = city.id
+    -> WHERE country.code = 'ESP';
+
+--------------------------------------------------------------------------------------
+
+5.Using JOIN ... ON, list all the languages spoken in the Southeast Asia region.
+
+A 
+
+
+6.Using a single query, list 25 cities around the world that start with the letter F.
+
+A. SELECT Name
+    -> FROM city
+    -> WHERE Name LIKE '%F%'
+    -> LIMIT 25;
+
+-----------------------------------------------------------------------------------------
+
+7.Using COUNT and JOIN ... ON, get the number of cities in China.
+
+A. SELECT COUNT(CountryCode)
+	FROM city 
+	ON WHERE CountryCode = 'CHN';
+
+-----------------------------------------------------------------------------
+
+8. Using IS NOT NULL, ORDER BY, and LIMIT, which country has the lowest population? Discard non-zero populations.
+
+A. SELECT * FROM country
+	WHERE population IS NOT NULL ORDER BY population ASC LIMIT1;
+
+-----------------------------------------------------------------------------------
